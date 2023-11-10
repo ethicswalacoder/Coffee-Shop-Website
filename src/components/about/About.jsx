@@ -11,7 +11,7 @@ const About = () => {
                 <img src={aboutImg} alt="" className="about__img" />
             </div>
             <div className="about__content">
-                <h2 className="section__title" data-title="About Us">
+                <h2 className="section__title title-left" data-title="About Us">
                     Fresh quality And Organic Tasty Coffee House For You
                 </h2>
                 <p className="about__description">
