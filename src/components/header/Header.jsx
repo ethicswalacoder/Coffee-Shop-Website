@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/images/logo.png';
 import {links} from "../../Data";
 import {FaStream} from "react-icons/fa";
 import './header.css';
 
 const Header = () => {
+   const [colorChange, setColorChange] = useState(false);
+   const changeNavbarColor = ()=> {
+    if(window.scrollY >= 100) {
+        setColorChange(true);
+    }else {
+        setColorChange(false);
+    }
+   };
+   window.addEventListener("scroll", changeNavbarColor);
   return (
    <header className="header">
-    <nav className="nav container">
+    <nav className={`nav  sticky ${colorChange ? "navbar colorChange" : "navbar"}` } id="navbar">
         <a href="/" className="nav__logo">
             <img src={logo} alt='' className="nav__logo-img"/>
         </a>
